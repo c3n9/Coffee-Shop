@@ -5,56 +5,123 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:CoffeeShop.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="500"
       Title="PCoffeeShop">
 
-    <Grid>
+    <Grid Background="#BE9A7C">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
         <StackPanel HorizontalAlignment="Center"
-                    Margin="20">
+                    Margin="20"
+                    Background="#d1b7a1"
+                    Width="150">
             <Image x:Name="ISelectedCoffee"
-                   Height="150" 
-                   Width="150"/>
-            <TextBlock x:Name="TBName"/>
-            <TextBlock x:Name="TBCost"/>
+                   Height="120" 
+                   Width="120"
+                   RenderOptions.BitmapScalingMode="Fant"
+                   Source="/Resources/CoffeeBeans.png"/>
+            <TextBlock x:Name="TBName"
+                       HorizontalAlignment="Center"
+                       FontFamily="Comic Sans MS"
+                       FontSize="15"
+                       Text="Выберите кофе"/>
+            <TextBlock x:Name="TBCost"
+                       HorizontalAlignment="Center"
+                       FontFamily="Comic Sans MS"
+                       FontSize="15"/>
         </StackPanel>
         <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
                   x:Name="ListServices" 
                   Width="400"
-                  d:ItemsSource="{d:SampleData ItemCount=2}"
+                  d:ItemsSource="{d:SampleData ItemCount=6}"
                   Grid.Row="1"
-                  HorizontalAlignment="Center">
+                  HorizontalAlignment="Center"
+                  Background="#BE9A7C"
+                  BorderThickness="0">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition Height="3*"/>
-                        </Grid.RowDefinitions>
-                        <StackPanel>
+                    <StackPanel Background="#d1b7a1"> 
                             <Image Source="{Binding Image}"
                                    Height="100" 
-                                   Width="100"/>
+                                   Width="100" 
+                                   RenderOptions.BitmapScalingMode="Fant"
+                                   HorizontalAlignment="Center"/>
                             <TextBlock Grid.Row="1" 
-                                       Text="{Binding Name}"/>
+                                       Text="{Binding Name}"
+                                       HorizontalAlignment="Center"
+                                       FontFamily="Comic Sans MS"
+                                       FontSize="15"/>
                             <TextBlock Grid.Row="2" 
-                                       Text="{Binding Cost}"/>
-                            <Button Content="Купить кофе"
+                                       Text="{Binding Cost, StringFormat='${0}'}"
+                                       HorizontalAlignment="Center"
+                                       FontFamily="Comic Sans MS"
+                                       FontSize="15"/>
+                            <Button Content="Buy"
                                     x:Name="BBuy"
-                                    Click="BBuy_Click"/>
-                        </StackPanel>
-                    </Grid>
+                                    Click="BBuy_Click"
+                                    FontFamily="Comic Sans MS"
+                                    FontSize="15"
+                                    Background="#ad805a"/>
+                    </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel></WrapPanel>
+                    <WrapPanel HorizontalAlignment="Center"/>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
         </ListView>
+        <StackPanel Grid.Column="1"
+                    Grid.Row="1">
+            <StackPanel Orientation="Horizontal"
+                        Background="#d1b7a1">
+                <Button Content="-"
+                        x:Name="Minus"
+                        Click="Minus_Click"
+                        Width="30"
+                        Height="50"
+                        FontFamily="Comic Sans MS"
+                        FontSize="28"
+                        Background="#d1b7a1"
+                        BorderThickness="0"/>
+                <Image Source="/Resources/Sugar.png"
+                       Width="50"
+                       RenderOptions.BitmapScalingMode="Fant"
+                       VerticalAlignment="Center"
+                       Margin="5,0,0,0"/>
+                <StackPanel>
+                    <TextBlock Text="$0,1"
+                               x:Name="TBCostSugar"
+                               VerticalAlignment="Top"
+                               Margin="5,0,3,5"
+                               FontFamily="Comic Sans MS"
+                               FontSize="12"/>
+                    <TextBlock Text="0"
+                               x:Name="TBCount"
+                               VerticalAlignment="Bottom"
+                               HorizontalAlignment="Center"
+                               Margin="5,20,3,0"
+                               FontFamily="Comic Sans MS"
+                               FontSize="12"/>
+                </StackPanel>
+                <Button Content="+"
+                        x:Name="Plus"
+                        Click="Plus_Click"
+                        Width="30"
+                        Height="50"
+                        FontFamily="Comic Sans MS"
+                        FontSize="28"
+                        Background="#d1b7a1"
+                        BorderThickness="0"/>
+
+            </StackPanel>
+        </StackPanel>
+        
     </Grid>
 </Page>

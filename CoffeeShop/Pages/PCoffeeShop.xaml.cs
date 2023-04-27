@@ -26,8 +26,12 @@ namespace CoffeeShop.Pages
             InitializeComponent();
             List<Coffee> contextCoffee = new List<Coffee>()
             {
-                new Coffee("Капучино", 80, "/Resources/Cappuccino.png"),
-                new Coffee("Латте", 110, "/Resources/Latte.png"),
+                new Coffee("Cappuccino", 0.80, "/Resources/Cappuccino.png"),
+                new Coffee("Latte", 0.61, "/Resources/Latte.png"),
+                new Coffee("Americano", 0.25, "/Resources/Americano.png"),
+                new Coffee("Expresso", 0.46, "/Resources/Espresso.png"),
+                new Coffee("Glace", 0.54, "/Resources/Glace.png"),
+                new Coffee("Mocha", 0.32, "/Resources/Mocha.png"),
             };
            
             ListServices.ItemsSource = contextCoffee.ToList();
@@ -41,8 +45,22 @@ namespace CoffeeShop.Pages
                 return;
             }
             TBName.Text = selectedCoffee.Name;
-            TBCost.Text = Convert.ToString(selectedCoffee.Cost);
+            TBCost.Text = "$"+Convert.ToString(selectedCoffee.Cost);
             ISelectedCoffee.Source = new BitmapImage(new Uri(selectedCoffee.Image, UriKind.RelativeOrAbsolute));
+        }
+
+        private void Minus_Click(object sender, RoutedEventArgs e)
+        {
+            if(TBCount.Text == "0")
+            {
+                return;
+            }
+            TBCount.Text = Convert.ToString(int.Parse(TBCount.Text) - 1);
+        }
+
+        private void Plus_Click(object sender, RoutedEventArgs e)
+        {
+            TBCount.Text = Convert.ToString(int.Parse(TBCount.Text) + 1);
         }
     }
 }
