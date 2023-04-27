@@ -123,5 +123,10 @@
   <ItemGroup>
     <Resource Include="Resources\CoffeeBeans.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1cent.png" />
+    <Resource Include="Resources\25cent.png" />
+    <Resource Include="Resources\5cent.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

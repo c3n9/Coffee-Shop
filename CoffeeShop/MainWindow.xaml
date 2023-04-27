@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:CoffeeShop"
         mc:Ignorable="d"
         Icon="/Resources/CoffeeBeans.ico"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
         Title="Coffee shop" Height="600" Width="500">
 
     <Grid>
