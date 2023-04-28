@@ -30,7 +30,7 @@
                        HorizontalAlignment="Center"
                        FontFamily="Comic Sans MS"
                        FontSize="15"
-                       Text="Выберите кофе"/>
+                       Text="Select coffee"/>
             <TextBlock x:Name="TBCost"
                        HorizontalAlignment="Center"
                        FontFamily="Comic Sans MS"
@@ -80,7 +80,7 @@
         <StackPanel Grid.Column="1"
                     Grid.RowSpan="2"
                     Background="#b58764">
-            <TextBlock Text="Добавить сахар"
+            <TextBlock Text="Add sugar"
                            HorizontalAlignment="Center"
                            Margin="5,0,3,10"
                            FontFamily="Comic Sans MS"
@@ -129,7 +129,7 @@
 
             </StackPanel>
             <StackPanel Margin="0,10,0,10">
-                <TextBlock Text="Оплата"
+                <TextBlock Text="Payment"
                            HorizontalAlignment="Center"
                            Margin="5,0,3,5"
                            FontFamily="Comic Sans MS"
@@ -236,7 +236,7 @@
                         BorderThickness="0"
                         HorizontalAlignment="Right"/>
                 </StackPanel>
-                <TextBlock Text="Итого к оплате:"
+                <TextBlock Text="Total to be paid:"
                            HorizontalAlignment="Center"
                            Margin="5,10,3,10"
                            FontFamily="Comic Sans MS"
@@ -254,7 +254,7 @@
                            FontFamily="Comic Sans MS"
                            FontSize="20"/>
                 </StackPanel>
-                <TextBlock Text="Внесено:"
+                <TextBlock Text="Your amount:"
                            HorizontalAlignment="Center"
                            Margin="5,10,3,10"
                            FontFamily="Comic Sans MS"

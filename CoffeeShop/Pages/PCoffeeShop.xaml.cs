@@ -162,7 +162,7 @@ namespace CoffeeShop.Pages
             TBCount25cent.Text = "0";
             TBCount.Text = "0";
             ISelectedCoffee.Source = ISelectedCoffee.Source = new BitmapImage(new Uri("/Resources/CoffeeBeans.png", UriKind.RelativeOrAbsolute));
-            TBName.Text = "Выберите кофе";
+            TBName.Text = "Select coffee";
             TBCost.Text = "";
         }
     }
