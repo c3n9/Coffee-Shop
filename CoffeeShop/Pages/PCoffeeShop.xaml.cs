@@ -74,15 +74,15 @@ namespace CoffeeShop.Pages
                 return;
             }
             TBCount.Text = Convert.ToString(int.Parse(TBCount.Text) + 1);
-            FullCost.Text = Convert.ToString(double.Parse(FullCost.Text) + 0.1);
+            FullCost.Text = Convert.ToString(double.Parse(FullCost.Text) + 0.01);
         }
 
         private void Minus1cent_Click(object sender, RoutedEventArgs e)
         {
-            if (TBCount1cent.Text != "0" && !(double.Parse(TBYourMoney.Text) < 0.1))
+            if (TBCount1cent.Text != "0" && !(double.Parse(TBYourMoney.Text) < 0.01))
             {
                 TBCount1cent.Text = Convert.ToString(double.Parse(TBCount1cent.Text) - 1);
-                TBYourMoney.Text = Convert.ToString(double.Parse(TBYourMoney.Text) - 0.1);
+                TBYourMoney.Text = Convert.ToString(double.Parse(TBYourMoney.Text) - 0.01);
             }
             else
             {
@@ -93,15 +93,15 @@ namespace CoffeeShop.Pages
         private void Plus1Cent_Click(object sender, RoutedEventArgs e)
         {
             TBCount1cent.Text = Convert.ToString(double.Parse(TBCount1cent.Text) + 1);
-            TBYourMoney.Text = Convert.ToString(double.Parse(TBYourMoney.Text) + 0.1);
+            TBYourMoney.Text = Convert.ToString(double.Parse(TBYourMoney.Text) + 0.01);
         }
 
         private void Minus5cent_Click(object sender, RoutedEventArgs e)
         {
-            if (TBCount5cent.Text != "0" && !(double.Parse(TBYourMoney.Text) < 0.5))
+            if (TBCount5cent.Text != "0" && !(double.Parse(TBYourMoney.Text) < 0.05))
             {
                 TBCount5cent.Text = Convert.ToString(double.Parse(TBCount5cent.Text) - 1);
-                TBYourMoney.Text = Convert.ToString(double.Parse(TBYourMoney.Text) - 0.5);
+                TBYourMoney.Text = Convert.ToString(double.Parse(TBYourMoney.Text) - 0.05);
             }
             else
             {
@@ -112,7 +112,7 @@ namespace CoffeeShop.Pages
         private void Plus5Cent_Click(object sender, RoutedEventArgs e)
         {
             TBCount5cent.Text = Convert.ToString(double.Parse(TBCount5cent.Text) + 1);
-            TBYourMoney.Text = Convert.ToString(double.Parse(TBYourMoney.Text) + 0.5);
+            TBYourMoney.Text = Convert.ToString(double.Parse(TBYourMoney.Text) + 0.05);
         }
 
         private void Minus25cent_Click(object sender, RoutedEventArgs e)
